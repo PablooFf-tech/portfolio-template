@@ -1,0 +1,37 @@
+{
+  "name": "portfolio-template",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "prebuild": "mkdir -p public/js public/css && cp -r js/* public/js/ && cp -r css/* public/css/",
+    "build": "npm run prebuild && tsc && vite build",
+    "postbuild": "cp dist/js/contact-cards-bundle.js js/contact-cards-bundle.js && cp dist/js/contact-cards-bundle.js public/js/contact-cards-bundle.js && cp dist/css/contact-cards-bundle.css css/contact-cards-bundle.css && cp dist/css/contact-cards-bundle.css public/css/contact-cards-bundle.css",
+    "preview": "vite preview",
+    "screenshots": "node scripts/capture-readme-screenshots.mjs"
+  },
+  "dependencies": {
+    "@base-ui/react": "^1.8.0",
+    "@emotion/is-prop-valid": "^1.4.0",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.475.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "sileo": "^0.1.5",
+    "tailwind-merge": "^3.7.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.4",
+    "@types/react": "^18.3.18",
+    "@types/react-dom": "^18.3.5",
+    "@vitejs/plugin-react": "^4.3.4",
+    "autoprefixer": "^10.4.20",
+    "playwright": "^1.49.1",
+    "postcss": "^8.5.2",
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.7.3",
+    "vite": "^6.1.0"
+  }
+}

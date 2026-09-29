@@ -1,0 +1,428 @@
+/* ==========================================================================
+   PORTFOLIO TEMPLATE — RESPONSIVE
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   GLOBAL OVERFLOW LOCK & VIEWPORT SAFETY
+   -------------------------------------------------------------------------- */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* --------------------------------------------------------------------------
+   MEDIA QUERY: DESKTOP & SMALL LAPTOPS (<= 1024px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .hero-title {
+    font-size: 2.8rem;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .hero-nav-cards {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   MEDIA QUERY: TABLETS & MOBILE PHONES (<= 768px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1rem;
+    width: 100%;
+  }
+
+  .section {
+    padding: 2.75rem 0;
+  }
+
+  .section-header {
+    margin-bottom: 1.5rem;
+  }
+
+  .section-title {
+    font-size: 1.75rem;
+  }
+
+  .section-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .hero-wrapper {
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+  }
+
+  .hero-title {
+    font-size: 2.15rem;
+    letter-spacing: -0.5px;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .hero-subtitle {
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .status-pill {
+    font-size: 0.75rem;
+    padding: 0.35rem 0.75rem;
+    white-space: normal;
+    text-align: center;
+    max-width: 100%;
+    word-break: break-word;
+  }
+
+  /* Compact 2-column Hero Nav Cards on Mobile */
+  .hero-nav-cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+    margin-top: 2rem;
+  }
+
+  .hero-nav-card {
+    padding: 0.9rem;
+  }
+
+  .hero-nav-card:last-child {
+    grid-column: span 2;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.75rem;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+  }
+
+  /* Header & Mobile Navigation */
+  .mobile-nav-toggle {
+    display: flex;
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: 3.5rem;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--bg-primary);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-top: 1px solid var(--border-subtle);
+    border-bottom: 1px solid var(--border-subtle);
+    flex-direction: column;
+    padding: 1.25rem;
+    gap: 0.5rem;
+    align-items: stretch;
+    justify-content: flex-start;
+    display: none;
+    z-index: 999;
+    animation: mobileMenuIn 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    overflow-y: auto;
+  }
+
+  [data-theme="light"] .nav-menu {
+    background-color: var(--bg-primary);
+  }
+
+  .nav-menu.active {
+    display: flex;
+  }
+
+  .nav-menu .nav-link {
+    width: 100%;
+    justify-content: flex-start;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    border-radius: var(--radius-md);
+  }
+
+  /* About Section Compact Layout (No Vertically Stacked Blocks) */
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .about-paragraph {
+    font-size: 0.935rem;
+    margin-bottom: 0.75rem;
+    line-height: 1.55;
+  }
+
+  .competencies-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.65rem;
+  }
+
+  .competency-item {
+    padding: 0.75rem;
+    margin-bottom: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.35rem;
+  }
+
+  .competency-item:last-child {
+    grid-column: span 2;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .competency-title {
+    font-size: 0.875rem;
+  }
+
+  .competency-desc {
+    font-size: 0.765rem;
+    line-height: 1.3;
+  }
+
+  /* Projects: 2 columnas densas en móvil (evita 1 col alta) */
+  .projects-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    justify-content: stretch;
+    gap: 0.65rem;
+  }
+
+  .project-card {
+    max-width: none;
+    margin-inline: 0;
+    border-radius: 8px;
+  }
+
+  .project-thumb {
+    height: 96px;
+  }
+
+  .project-badge-overlay {
+    top: 0.4rem;
+    right: 0.4rem;
+    padding: 0.12rem 0.4rem;
+    font-size: 0.6rem;
+  }
+
+  .project-info {
+    padding: 0.7rem 0.7rem 0.8rem;
+  }
+
+  .project-name {
+    font-size: 0.82rem;
+    margin-bottom: 0.25rem;
+    line-height: 1.25;
+  }
+
+  .project-summary {
+    font-size: 0.7rem;
+    line-height: 1.35;
+    margin-bottom: 0.55rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .project-tags {
+    gap: 0.25rem;
+    margin-bottom: 0.65rem;
+  }
+
+  .project-tags .badge {
+    font-size: 0.62rem;
+    padding: 0.15rem 0.4rem;
+  }
+
+  .project-github-btn {
+    border-radius: 6px;
+    padding: 0.4rem 0.45rem;
+    font-size: 0.65rem;
+    gap: 0.35rem;
+    white-space: normal;
+    line-height: 1.2;
+    text-align: center;
+  }
+
+  .project-github-btn .fab {
+    font-size: 0.75rem;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.65rem;
+  }
+
+  .skill-card {
+    padding: 0.8rem;
+  }
+
+  .skill-card-header {
+    font-size: 0.9rem;
+    margin-bottom: 0.45rem;
+    gap: 0.35rem;
+  }
+
+  .skill-list {
+    gap: 0.3rem;
+  }
+
+  .skill-list-item {
+    font-size: 0.775rem;
+    gap: 0.35rem;
+    line-height: 1.35;
+  }
+
+  .skill-card:last-child {
+    grid-column: span 2;
+  }
+
+  .projects-filter {
+    gap: 0.35rem;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .filter-btn {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.85rem;
+    white-space: nowrap;
+  }
+
+  /* Contact Section Compact Layout */
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 1.15rem;
+  }
+
+  .contact-item {
+    padding: 0.65rem 0.85rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .form-textarea {
+    min-height: 90px;
+  }
+
+  .contact-form {
+    gap: 0.75rem;
+  }
+
+  /* Cards, Boxes & Timeline */
+  .card-box {
+    padding: 1rem;
+  }
+
+  .timeline-item {
+    padding-left: 1.35rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .timeline-dot {
+    left: -6px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   MEDIA QUERY: SMALL MOBILE PHONES (<= 480px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 1.75rem;
+    line-height: 1.15;
+  }
+
+  .hero-subtitle {
+    font-size: 0.875rem;
+  }
+
+  .status-pill {
+    font-size: 0.725rem;
+    line-height: 1.3;
+  }
+
+  .section-title {
+    font-size: 1.45rem;
+  }
+
+  .tab-view {
+    padding-top: 3.75rem;
+    padding-bottom: 2rem;
+  }
+
+  .hero-socials a {
+    width: 36px;
+    height: 36px;
+  }
+
+  .hero-socials svg, .hero-socials i {
+    width: 18px;
+    height: 18px;
+  }
+
+  .legal-card {
+    padding: 1rem 0.85rem;
+  }
+
+  /* Projects aún más densos en phones estrechos */
+  .projects-grid {
+    gap: 0.5rem;
+  }
+
+  .project-thumb {
+    height: 84px;
+  }
+
+  .project-info {
+    padding: 0.55rem 0.55rem 0.65rem;
+  }
+
+  .project-name {
+    font-size: 0.76rem;
+  }
+
+  .project-summary {
+    font-size: 0.65rem;
+    -webkit-line-clamp: 2;
+    margin-bottom: 0.4rem;
+  }
+
+  .project-tags {
+    margin-bottom: 0.5rem;
+  }
+
+  .project-github-btn {
+    font-size: 0.6rem;
+    padding: 0.35rem 0.35rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   ANIMATIONS & KEYFRAMES
+   -------------------------------------------------------------------------- */
+@keyframes mobileMenuIn {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

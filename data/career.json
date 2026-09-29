@@ -1,0 +1,42 @@
+{
+  "work": [
+    {
+      "step": 1,
+      "date": "[Fecha — ej. 2024 — Presente]",
+      "title": "[Puesto / rol] — [Empresa o cliente]",
+      "content": "[Qué hiciste, resultados y contexto. Sustituye por tu experiencia real.]"
+    },
+    {
+      "step": 2,
+      "date": "[Fecha — ej. 2020 — 2024]",
+      "title": "[Puesto anterior] — [Organización]",
+      "content": "[Segunda entrada de ejemplo. Duplica el bloque en data/career.json para añadir más.]"
+    },
+    {
+      "step": 3,
+      "date": "[Fecha opcional]",
+      "title": "[Proyecto freelance / colaboración / hito]",
+      "content": "[Texto libre: voluntariado, emprendimiento, prácticas, etc.]"
+    }
+  ],
+  "education": [
+    {
+      "step": 1,
+      "date": "[Fecha — ej. 2022 — 2024]",
+      "title": "[Titulación, curso o certificación] — [Centro]",
+      "content": "[Resumen de la formación. Edita data/career.json.]"
+    },
+    {
+      "step": 2,
+      "date": "[Fecha]",
+      "title": "[Otra formación] — [Institución]",
+      "content": "[Especialidad, menciones o competencias adquiridas.]"
+    },
+    {
+      "step": 3,
+      "date": "[Idiomas / otros]",
+      "title": "[Idioma — nivel]",
+      "content": "[Ej. Inglés B2, francés básico, etc.]"
+    }
+  ]
+}
